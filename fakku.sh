@@ -68,6 +68,7 @@ dnsmenu(){
     echo -e ""
     echo -e "$cyan  00$red :$white Back"
     echo -e ""
+    dnscmd
 
 }
 
