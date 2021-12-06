@@ -20,6 +20,7 @@ banner(){
 
 # Menu
 main(){
+    banner
     echo -e ""
     echo -e "$cyan  01$red :$white Payload Generator"
     echo -e "$cyan  02$red :$white Brute Force Attack"
@@ -33,6 +34,7 @@ main(){
 }
 
 payloadmenu(){
+    banner
     echo -e ""
     echo -e "$cyan  01$red :$white Windows Payload"
     echo -e "$cyan  02$red :$white Android Payload"
@@ -46,6 +48,7 @@ payloadmenu(){
 }
 
 brutemenu(){
+    banner
     echo -e ""
     echo -e "$cyan  01$red :$white SSH Brute"
     echo -e "$cyan  02$red :$white Facebook Account Brute"
@@ -56,6 +59,7 @@ brutemenu(){
 }
 
 dnsmenu(){
+    banner
     echo -e ""
     echo -e "$cyan  05$red :$white DNS Lookup"
     echo -e "$cyan  05$red :$white Reverse DNS Lookup"
@@ -69,6 +73,7 @@ dnsmenu(){
 }
 
 ipmenu(){
+    banner
     echo -e ""
     echo -e "$cyan  01$red :$white GeoIP Location Lookup"
     echo -e "$cyan  02$red :$white Reverse IP Lookup"
@@ -82,6 +87,7 @@ ipmenu(){
 }
 
 webmenu(){
+    banner
     echo -e ""
     echo -e "$cyan  01$red :$white HTTP Header Check"
     echo -e "$cyan  02$red :$white Extract Links From Page"
@@ -97,6 +103,7 @@ webmenu(){
 
 # Payload
 windowspayload(){
+    banner
     echo -e ""
     echo -e "$cyan  01$red :$white Simple Executable File Payload"
     echo -e "$cyan  02$red :$white Installer Payload"
@@ -112,12 +119,16 @@ windowspayload(){
     then
         banner
         bash tools/payload/windows/installer
+    elif [ $act = 0 ]
+    then
+        payloadmenu
     else
         windowspayload
     fi
 }
 
 androidpayload(){
+    banner
     echo -e ""
     echo -e "$cyan  01$red :$white Simple .APK File Payload"
     echo -e ""
@@ -137,6 +148,7 @@ androidpayload(){
 }
 
 linuxpayload(){
+    banner
     echo -e ""
     echo -e "$cyan  01$red :$white Reverse TCP"
     echo -e ""
@@ -156,6 +168,7 @@ linuxpayload(){
 }
 
 macpayload(){
+    banner
     echo -e ""
     echo -e "$cyan  01$red :$white Reverse TCP"
     echo -e "$cyan  02$red :$white Python Payload"
@@ -180,6 +193,7 @@ macpayload(){
 }
 
 iospayload(){
+    banner
     echo -e ""
     echo -e "$cyan  01$red :$white Reverse TCP (execute via ssh)"
     echo -e "$cyan  02$red :$white Embedded iOS Package"
