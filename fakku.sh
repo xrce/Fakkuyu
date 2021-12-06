@@ -60,10 +60,10 @@ brutemenu(){
 dnsmenu(){
     banner
     echo -e ""
-    echo -e "$cyan  05$red :$white DNS Lookup"
-    echo -e "$cyan  05$red :$white Reverse DNS Lookup"
-    echo -e "$cyan  05$red :$white DNS Host Records"
-    echo -e "$cyan  05$red :$white Shared DNS Servers"
+    echo -e "$cyan  01$red :$white DNS Lookup"
+    echo -e "$cyan  02$red :$white Reverse DNS Lookup"
+    echo -e "$cyan  03$red :$white DNS Host Records"
+    echo -e "$cyan  04$red :$white Shared DNS Servers"
     echo -e "$cyan  05$red :$white DNS Digging"
     echo -e ""
     echo -e "$cyan  00$red :$white Back"
