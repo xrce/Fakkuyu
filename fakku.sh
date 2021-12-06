@@ -24,11 +24,10 @@ main(){
     echo -e ""
     echo -e "$cyan  01$red :$white Payload Generator"
     echo -e "$cyan  02$red :$white Brute Force Attack"
-    echo -e "$cyan  03$red :$white Hash Tools"
-    echo -e "$cyan  04$red :$white DNS Queries"
-    echo -e "$cyan  05$red :$white IP Tools"
-    echo -e "$cyan  06$red :$white Web Tools"
-    echo -e "$cyan  07$red :$white Nmap Helper"
+    echo -e "$cyan  03$red :$white DNS Queries"
+    echo -e "$cyan  04$red :$white IP Tools"
+    echo -e "$cyan  05$red :$white Web Tools"
+    echo -e "$cyan  06$red :$white Nmap Helper"
     echo -e ""
     maincmd
 }
@@ -232,20 +231,16 @@ maincmd(){
     elif [ $act = 3 ]
     then
         banner
-        hashmenu
+        dnsmenu
     elif [ $act = 4 ]
     then
         banner
-        dnsmenu
+        ipmenu
     elif [ $act = 5 ]
     then
         banner
-        ipmenu
-    elif [ $act = 6 ]
-    then
-        banner
         webmenu
-    elif [ $act = 7 ]
+    elif [ $act = 6 ]
     then
         banner
         sudo bash tools/nmap/nmap
