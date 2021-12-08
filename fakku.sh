@@ -93,8 +93,9 @@ webmenu(){
     echo -e "$cyan  02$red :$white Extract Links From Page"
     echo -e "$cyan  03$red :$white Reverse Google Analytics Lookup"
     echo -e "$cyan  04$red :$white Subdomain Finder"
-    echo -e "$cyan  05$red :$white Directory Brute"
-    echo -e "$cyan  06$red :$white Admin Login Finder"
+    echo -e "$cyan  05$red :$white Subdomain Brute"
+    echo -e "$cyan  06$red :$white Directory Brute"
+    echo -e "$cyan  07$red :$white Admin Login Finder"
     echo -e ""
     echo -e "$cyan  00$red :$white Back"
     echo -e ""
@@ -113,11 +114,9 @@ windowspayload(){
     read -p " payload/windows # " act;
     if [ $act = 1 ]
     then
-        banner
         bash tools/payload/windows/exe
     elif [ $act = 2 ]
     then
-        banner
         bash tools/payload/windows/installer
     elif [ $act = 0 ]
     then
@@ -137,7 +136,6 @@ androidpayload(){
     read -p " payload/android # " act;
     if [ $act = 1 ]
     then
-        banner
         bash tools/payload/android/apk
     elif [ $act = 0 ]
     then
@@ -157,7 +155,6 @@ linuxpayload(){
     read -p " payload/linux # " act;
     if [ $act = 1 ]
     then
-        banner
         bash tools/payload/linux/reverse_tcp
     elif [ $act = 0 ]
     then
@@ -178,11 +175,9 @@ macpayload(){
     read -p " payload/mac # " act;
     if [ $act = 1 ]
     then
-        banner
         bash tools/payload/mac/reverse_tcp
     elif [ $act = 2 ]
     then
-        banner
         bash tools/payload/mac/python
     elif [ $act = 0 ]
     then
@@ -203,11 +198,9 @@ iospayload(){
     read -p " payload/ios # " act;
     if [ $act = 1 ]
     then
-        banner
         bash tools/payload/ios/reverse_tcp
     elif [ $act = 2 ]
     then
-        banner
         bash tools/payload/ios/arcane
     elif [ $act = 0 ]
     then
@@ -223,27 +216,21 @@ maincmd(){
     read -p " ~ # " act;
     if [ $act = 1 ]
     then
-        banner
         payloadmenu
     elif [ $act = 2 ]
     then
-        banner
         brutemenu
     elif [ $act = 3 ]
     then
-        banner
         dnsmenu
     elif [ $act = 4 ]
     then
-        banner
         ipmenu
     elif [ $act = 5 ]
     then
-        banner
         webmenu
     elif [ $act = 6 ]
     then
-        banner
         sudo bash tools/nmap/nmap
     else
         main
@@ -255,15 +242,12 @@ brutecmd(){
     read -p " brute # " act;
     if [ $act = 1 ]
     then
-        banner
         python3 tools/brute/ssh
     elif [ $act = 2 ]
     then
-        banner
         python3 tools/brute/facebook
     elif [ $act = 0 ]
     then
-        banner
         main
     else
         brutemenu
@@ -275,27 +259,21 @@ payloadcmd(){
     read -p " payload # " act;
     if [ $act = 1 ]
     then
-        banner
         windowspayload
     elif [ $act = 2 ]
     then
-        banner
         androidpayload
     elif [ $act = 3 ]
     then
-        banner
         linuxpayload
     elif [ $act = 4 ]
     then
-        banner
         macpayload
     elif [ $act = 5 ]
     then
-        banner
         iospayload
     elif [ $act = 0 ]
     then
-        banner
         main
     else
         payloadmenu
@@ -371,8 +349,11 @@ webcmd(){
         php tools/web/subdoscan
     elif [ $act = 5 ]
     then
-        php tools/web/dirbrute
+        php tools/web/subdobrute
     elif [ $act = 6 ]
+    then
+        php tools/web/dirbrute
+    elif [ $act = 7 ]
     then
         php tools/web/adfinder
     elif [ $act = 0 ]
