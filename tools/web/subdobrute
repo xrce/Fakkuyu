@@ -1,0 +1,52 @@
+<?php
+
+error_reporting(0);
+include 'config/color.php';
+
+function banner(){
+	@system("clear");
+	include 'config/color.php';
+	print "\n$red    フ".$yellow."ァ".$green."ッ".$cyan."ク".$okegreen."ユ".$lightgreen."ー".$white."\n\n";
+}
+
+banner();
+print "\n target : ";
+$target = trim(fgets(STDIN));
+print " list : ";
+$list = trim(fgets(STDIN));
+
+$buka = fopen("$list","r");
+$ukuran = filesize("$list");
+$baca = fread($buka,$ukuran);
+$lists = explode("\n",$baca);
+
+banner();
+foreach ($lists as $sub){
+	request($target, $sub);
+}
+
+function request($target, $sub){
+	include 'config/color.php';
+	$log = "$sub.$target";
+	$ch = curl_init("$log");
+	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_exec($ch);
+	$httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+	curl_close($ch);
+	if (!file_exists("results")){
+		mkdir("results");
+	}
+	if (!file_exists("results/subdobrute")){
+		mkdir("results/subdobrute");
+	}
+	if($httpcode == 200 OR $httpcode == 403 OR $httpcode == 302){
+		$handle = fopen("results/subdobrute/$target.txt", "a+");
+		fwrite($handle, "$log\n");
+		print "\n$okegreen [+]$white $log$okegreen OK";
+	} else {
+		print "\n$red [x]$white $log$red ERROR";
+	}
+}
+
+?>
