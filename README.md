@@ -105,6 +105,10 @@ My priv8 framework, written in bash
   + **Directory Brute** - Perform Bruteforce attack to search all directory from hosts
   + **Admin Login Finder** - Perform Bruteforce attack to search panel for admin login
 
++ **Hash Killer**
+  
+  This menu provides tools for Hash Cracking
+
 + **Nmap Helper**
 
 ## External Links
@@ -114,6 +118,7 @@ My priv8 framework, written in bash
 + [Adfinder](https://github.com/N1ght420/adfinder) - Simple Admin Login Finder
 + [Subdoin](https://github.com/N1ght420/Subdoin) - Subdomain Grabber
 + [Dircrunch](https://github.com/N1ght420/Dircrunch) -  Simple tool for Searching Directory
++ [Hashatsu](https://github.com/N1ght420/Hashatsu) - Simple Hash Killer
 
 ## Note
 ```

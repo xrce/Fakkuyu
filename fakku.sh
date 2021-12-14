@@ -27,7 +27,8 @@ main(){
     echo -e "$cyan  03$red :$white DNS Queries"
     echo -e "$cyan  04$red :$white IP Tools"
     echo -e "$cyan  05$red :$white Web Tools"
-    echo -e "$cyan  06$red :$white Nmap Helper"
+    echo -e "$cyan  06$red :$white Hash Killer"
+    echo -e "$cyan  07$red :$white Nmap Helper"
     echo -e ""
     maincmd
 }
@@ -230,6 +231,9 @@ maincmd(){
     then
         webmenu
     elif [ $act = 6 ]
+    then
+        python3 tools/hash/hashkiller
+    elif [ $act = 7 ]
     then
         sudo bash tools/nmap/nmap
     else
